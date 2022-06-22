@@ -1,3 +1,3 @@
 FROM alpine
-CMD ["echo", "your build image! test "]
+CMD ["echo", "your build image! "]
 
