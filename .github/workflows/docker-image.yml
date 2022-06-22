@@ -31,12 +31,12 @@ jobs:
           CF_API_KEY: ${{ secrets.CF_TOKEN }}
           
           #USE this if you have setup integrations
-          #CF_CONTAINER_REGISTRY_INTEGRATION: "dockerhub"
+          CF_CONTAINER_REGISTRY_INTEGRATION: "dockerhub"
           CF_JIRA_INTEGRATION: "jira"
 
           #use this if you don't have a docker integration setup
-          CF_DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          CF_DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
+          #CF_DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          #CF_DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
           
           #use this if you dont' have a jira intergration setup
           #"CF_JIRA_API_TOKEN": ${{ secrets.JIRA_TOKEN }}
