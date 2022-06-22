@@ -27,11 +27,11 @@ jobs:
         with:
           CF_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/csdp-report-image-github-action:example-reported-image
           CF_ENRICHERS: "jira, git"
-          CF_HOST: "https://eti.pipeline-team.cf-cd.com"
-          CF_API_KEY: ${{ secrets.ETI_TOKEN }}
+          CF_HOST: "https://mr-5f04515c6f790a046303eb5a-298e2ae.cf-op.com"
+          CF_API_KEY: ${{ secrets.CF_TOKEN }}
           
           #USE this if you have setup integrations
-          CF_CONTAINER_REGISTRY_INTEGRATION: "saffi"
+          CF_CONTAINER_REGISTRY_INTEGRATION: "dockerhub"
           CF_JIRA_INTEGRATION: "jira"
 
           #use this if you don't have a docker integration setup
@@ -43,7 +43,7 @@ jobs:
           #"CF_JIRA_HOST_URL": "https://codefresh-io.atlassian.net"
           #"CF_JIRA_EMAIL": "saffi.hartal@codefresh.io"
           
-          "CF_GITHUB_TOKEN": ${{ secrets.G_TOKEN }}
+          "CF_GITHUB_TOKEN": ${{ secrets.GIT_TOKEN }}
           
           #this will be derived from the event
           "CF_GIT_PROVIDER": "github"
