@@ -1,3 +1,3 @@
 FROM alpine
-CMD ["echo", "your build image! adfa"]
+CMD ["echo", "your build image! "]
 
