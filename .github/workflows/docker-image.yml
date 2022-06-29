@@ -52,7 +52,7 @@ jobs:
           
           "CF_JIRA_MESSAGE": "CR-12293"
           "CF_JIRA_PROJECT_PREFIX": "CR"
-        uses: codefresh-io/csdp-report-image@0.0.46
+        uses: codefresh-io/csdp-report-image@0.0.47
 
 
 
