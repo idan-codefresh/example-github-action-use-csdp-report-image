@@ -27,7 +27,7 @@ jobs:
         with:
           CF_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/csdp-report-image-github-action:example-reported-image
           CF_ENRICHERS: "jira, git"
-          CF_HOST: "https://mr-5f04515c6f790a046303eb5a-d0a662e.cf-op.com"
+          CF_HOST: "https://mr-5f04515c6f790a046303eb5a-d0a662e.cf-cd.com"
           CF_API_KEY: ${{ secrets.CF_TOKEN }}
           
           #USE this if you have setup integrations
