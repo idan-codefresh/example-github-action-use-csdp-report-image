@@ -31,7 +31,7 @@ jobs:
           CF_API_KEY: ${{ secrets.CF_TOKEN }}
           
           #USE this if you have setup integrations
-          CF_CONTAINER_REGISTRY_INTEGRATION: "mydockerhub"
+          CF_CONTAINER_REGISTRY_INTEGRATION: "mydocker"
           CF_JIRA_INTEGRATION: "myjira"
 
          
