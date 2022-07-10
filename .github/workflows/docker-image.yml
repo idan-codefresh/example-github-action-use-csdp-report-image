@@ -27,8 +27,8 @@ jobs:
         with:
           CF_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/csdp-report-image-github-action:example-reported-image
           CF_ENRICHERS: "jira, git"
-          CF_HOST: "https://mr-5f04515c6f790a046303eb5a-d0a662e.cf-cd.com"
-          CF_API_KEY: ${{ secrets.CF_TOKEN }}
+          CF_HOST: "https://mr-62c6d2bf754487f285b9b61b-7f614b0.cf-cd.com"
+          CF_API_KEY: ${{ secrets.CF_TOKEN_MIKA }}
           
           #USE this if you have setup integrations
           CF_CONTAINER_REGISTRY_INTEGRATION: "mydocker"
