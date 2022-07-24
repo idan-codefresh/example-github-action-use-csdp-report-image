@@ -25,7 +25,8 @@ jobs:
           docker build . --file Dockerfile --tag $CF_IMAGE && docker push $CF_IMAGE
       - name: report image by action
         env:
-          CF_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/csdp-report-image-github-action:example-reported-image
+#          CF_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/csdp-report-image-github-action:example-reported-image
+          CF_IMAGE: gcr.io/heptio-images/ks-guestbook-demo:0.2
         with:
           # Specify cluster app-proxy
          
