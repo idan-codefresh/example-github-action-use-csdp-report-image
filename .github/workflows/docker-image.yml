@@ -37,7 +37,7 @@ jobs:
           # report image 
           CF_IMAGE: "${{ env.CF_IMAGE }}"
           # use githug token
-          CF_GITHUB_TOKEN: ${{ secrets.CF_GITHUB_TOKEN }}    
+          CF_GITHUB_TOKEN: ${{ secrets.CF_GIT_TOKEN }}    
           # use jira integration - jira is the name of the integration created in codefresh argo platform.
           CF_JIRA_INTEGRATION: "myjira" 
           CF_JIRA_MESSAGE: "CR-13186"
