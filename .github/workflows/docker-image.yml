@@ -24,28 +24,28 @@ jobs:
         run: |
           docker build . --file Dockerfile --tag $CF_IMAGE && docker push $CF_IMAGE
       - name: report image by action
+        env:
+          CF_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/report-image-github-action:202207211619
         with:
-          CF_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/csdp-report-image-github-action:example-reported-image
-          CF_ENRICHERS: "jira, git"
-          CF_HOST: "https://mr-62c6d2bf754487f285b9b61b-7f614b0.cf-cd.com"
-          CF_API_KEY: ${{ secrets.CF_TOKEN_MIKA }}
-          
-          #USE this if you have setup integrations
-          CF_CONTAINER_REGISTRY_INTEGRATION: "mydocker"
-          CF_JIRA_INTEGRATION: "myjira"
-
+          # Specify cluster app-proxy
          
-          
-          "CF_GITHUB_TOKEN": ${{ secrets.GIT_TOKEN }}
-          
-          #this will be derived from the event
-          "CF_GIT_PROVIDER": "github"
-          "CF_GIT_REPO": "idan-codefresh/example-github-action-use-csdp-report-image"
-          "CF_GIT_BRANCH": "main"
-          
-          "CF_JIRA_MESSAGE": "CR-12293"
-          "CF_JIRA_PROJECT_PREFIX": "CR"
-        uses: codefresh-io/csdp-report-image@0.0.62
+          CF_HOST: "https://mr-5f04515c6f790a046303eb5a-d0a662e.cf-cd.com"
+          CF_API_KEY: ${{ secrets.CF_API_KEY }}
+          # use image registry integration - the name of the integration used for pulling information on the image.
+          CF_CONTAINER_REGISTRY_INTEGRATION: "mydocker"
+
+          # report image 
+          CF_IMAGE: "${{ env.CF_IMAGE }}"
+          # use githug token
+          CF_GITHUB_TOKEN: ${{ secrets.CF_GITHUB_TOKEN }}    
+          # use jira integration - jira is the name of the integration created in codefresh argo platform.
+          CF_JIRA_INTEGRATION: "myjira" 
+          CF_JIRA_MESSAGE: "CR-13186"
+#           "A message with embedded issue ( i.e. CR-11027 ) 
+#               that would be use query jira for the ticket"
+          # a specified prefix for finding the jira issue 
+          CF_JIRA_PROJECT_PREFIX: "CR"
+        uses: codefresh-io/codefresh-report-image@latest
 
 
 
