@@ -32,14 +32,14 @@ jobs:
           CF_HOST: "https://mr-5f04515c6f790a046303eb5a-d0a662e.cf-cd.com"
           CF_API_KEY: ${{ secrets.CF_TOKEN }}
           # use image registry integration - the name of the integration used for pulling information on the image.
-          CF_CONTAINER_REGISTRY_INTEGRATION: "mydocker"
+          CF_CONTAINER_REGISTRY_INTEGRATION: "docker"
 
           # report image 
           CF_IMAGE: "${{ env.CF_IMAGE }}"
           # use githug token
           CF_GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}    
           # use jira integration - jira is the name of the integration created in codefresh argo platform.
-          CF_JIRA_INTEGRATION: "myjira" 
+          CF_JIRA_INTEGRATION: "jira" 
           CF_JIRA_MESSAGE: "CR-13186"
 #           "A message with embedded issue ( i.e. CR-11027 ) 
 #               that would be use query jira for the ticket"
