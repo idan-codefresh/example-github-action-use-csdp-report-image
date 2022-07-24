@@ -25,8 +25,8 @@ jobs:
           docker build . --file Dockerfile --tag $CF_IMAGE && docker push $CF_IMAGE
       - name: report image by action
         env:
-#          CF_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/csdp-report-image-github-action:example-reported-image
-          CF_IMAGE: gcr.io/heptio-images/ks-guestbook-demo:0.2
+          CF_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/csdp-report-image-github-action:example-reported-image
+#          CF_IMAGE: gcr.io/heptio-images/ks-guestbook-demo:0.2
         with:
           # Specify cluster app-proxy
          
@@ -36,7 +36,8 @@ jobs:
           CF_CONTAINER_REGISTRY_INTEGRATION: "docker"
 
           # report image 
-          CF_IMAGE: "${{ env.CF_IMAGE }}"
+  #        CF_IMAGE: "${{ env.CF_IMAGE }}"
+          CF_IMAGE: "gcr.io/heptio-images/ks-guestbook-demo:0.2"
           # use githug token
           CF_GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}    
           # use jira integration - jira is the name of the integration created in codefresh argo platform.
